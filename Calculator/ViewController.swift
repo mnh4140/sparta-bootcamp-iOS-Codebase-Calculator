@@ -10,7 +10,7 @@ import SnapKit
 
 class ViewController: UIViewController {
     
-    let label = UILabel()
+    let label = UILabel() // 텍스트 출력
 
     override func viewDidLoad() {
         super.viewDidLoad()
