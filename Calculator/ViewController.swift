@@ -96,6 +96,24 @@ class ViewController: UIViewController {
     func makeButton(title: String) -> UIButton {
         let button = UIButton()
         
+        /*
+         버튼 이름이 특정 문자와 일치하면
+         버튼 색을 오랜지 색으로 변경한다.
+         */
+        let orange = ["+", "-", "*", "/", "AC", "="]
+        
+        for i in orange {
+            if title.contains(i) {
+                button.setTitle(title, for: .normal)
+                button.titleLabel?.font = .boldSystemFont(ofSize: 30)
+                button.backgroundColor = .orange
+                button.layer.cornerRadius = 40
+                button.snp.makeConstraints { $0.width.height.equalTo(80)}
+                
+                return button
+            }
+        }
+        
         button.setTitle(title, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 30)
         button.backgroundColor = UIColor(
@@ -103,6 +121,7 @@ class ViewController: UIViewController {
         )
         button.layer.cornerRadius = 40
         button.snp.makeConstraints { $0.width.height.equalTo(80)}
+        
         return button
     }
 
